@@ -11,3 +11,8 @@ th {
 .tableHeaders{
   border: 2px solid Black;
 }
+
+.addedTableInputs {
+  font-size: 16px;
+  font-weight: bold;
+}
