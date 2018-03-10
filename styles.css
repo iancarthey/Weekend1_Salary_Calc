@@ -8,11 +8,50 @@ th {
   border: 2px solid Black;
 }
 
-.tableHeaders{
-  border: 2px solid Black;
-}
 
 .addedTableInputs {
   font-size: 16px;
   font-weight: bold;
+}
+
+.entireTable{
+  width: 100%;
+  height: 30px;
+  border: 2px solid Black;
+}
+
+td {
+  width: 100%;
+  border: 2px solid black;
+
+}
+
+.newFormat{
+  width: 100%;
+  border: 2px solid black;
+}
+
+#firstNameInput {
+  border: 2px outset grey;
+}
+
+#lastNameInput {
+  border: 2px outset grey;
+}
+
+#idNumInput{
+  border: 2px outset grey;
+}
+
+#titleInput {
+  border: 2px outset grey;
+}
+
+#salaryInput {
+  border: 2px outset grey;
+}
+
+#monthlyCost {
+  text-align: right;
+  
 }

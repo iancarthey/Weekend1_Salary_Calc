@@ -25,10 +25,16 @@ function addInputs(){
   let userTitle = $('#titleInput').val();
   let userSalary = $('#salaryInput').val();
 
-  $('#tableBody').append('<tr><td>' + userNameInput + '</td>' + '<td>'
+  $('#tableBody').append('<tr class="newFormat"><td>' + userNameInput + '</td>' + '<td>'
   + userLastName + '</td>' + '<td>' + userIdNumber + '</td>' + '<td>'
   + userTitle + '</td>' + '<td>' + userSalary + '</td></tr>');
   newInputsEditors();
+
+//calculating monthly and posting to dom
+  $('#monthlyCost').empty();
+
+  let inputMonthlyCost = userSalary / 12;
+
 }
 
 
@@ -36,7 +42,10 @@ function newInputsEditors(){
   $('#tableBody').addClass('addedTableInputs');
 }
 
-
+// function calculatingMonthlyCost(){
+//
+//   $('#monthlyCost').append('Total Monthly: ' + inputMonthlyCost);
+// }
 // //input variables
 // let userNameInput = $('#firstNameInput').val();
 // let userLastName = $('#lastNameInput').val();
