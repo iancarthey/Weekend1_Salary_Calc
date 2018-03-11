@@ -11,6 +11,7 @@ function readyNow(){
   //checking for jQuery
   addEventHandlers();
   //adding input and button events
+  clearEmployee();
 }
 
 function addEventHandlers(){
@@ -29,9 +30,10 @@ function addInputs(){
   let userSalary = Number($('#salaryInput').val());
   console.log(userSalary);
 
-  $('#tableBody').append('<tr class="newFormat"><td>' + nameInput + '</td>' + '<td>'
-  + lastName + '</td>' + '<td>' + idNumber + '</td>' + '<td>'
-  + userTitle + '</td>' + '<td>' + userSalary + '</td></tr>');
+  $('#tableBody').append('<tr><td>' + nameInput + '</td><td>'
+  + lastName + '</td><td>' + idNumber + '</td><td>'
+  + userTitle + '</td><td>' + userSalary + '</td><td id="remove">'
+  + '<button id="delete" type="button">Delete</button>' + '</td></tr>');
   newInputsEditors();
 
 //for calculating total monthly cost
@@ -39,16 +41,18 @@ function addInputs(){
   employeeArray.push(newEmployee);
 
   initialMonthlySalary (userSalary);
+//clear inputs function
   clearInputFields();
 
 
 }
 
-
+//adding inputs to table
 function newInputsEditors(){
   $('#tableBody').addClass('addedTableInputs');
 }
 
+//creating class
 class Employee {
   constructor(firstNameIn, lastNameIn, idIn, titleIn, salaryIn){
     this.firstName = firstNameIn;
@@ -59,8 +63,11 @@ class Employee {
   }
 }
 
+//employee array
 let employeeArray = [];
 
+
+//functions for total monthly cost
 function initialMonthlySalary( salary ){
   let monthlySalary = 0;
   for(let employee of employeeArray){
@@ -73,6 +80,7 @@ function finalMonthlyCost( monthlySalary ){
   let monthlyCost = monthlySalary / 12;
   $('#monthlyFace').empty();
   $('#monthlyFace').append("Total Monthly: " + Number(monthlyCost).toFixed(2));
+  //if statement for changing background red
   if ( monthlyCost > 20000){
     $('#monthlyFace').empty();
     $('#monthlyFace').append("Total Monthly: " + Number(monthlyCost).toFixed(2));
@@ -80,6 +88,7 @@ function finalMonthlyCost( monthlySalary ){
   }
 }
 
+//clear input fields
 function clearInputFields(){
   return $('#firstNameInput').val(''),
          $('#lastNameInput').val(''),
@@ -88,7 +97,10 @@ function clearInputFields(){
          $('#titleInput').val(''),
          $('#salaryInput').val('');
 }
-// function calculatingMonthlyCost(){
-//
-//   $('#monthlyCost').append('Total Monthly: ' + inputMonthlyCost);
-// }
+
+//clear employee funciton
+function clearEmployee(){
+  $('#tableBody').on('click', '#delete', function(){
+    $(this).closest('tr').remove();
+  });
+}
