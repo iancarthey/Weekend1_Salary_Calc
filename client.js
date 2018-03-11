@@ -39,7 +39,7 @@ function addInputs(){
   employeeArray.push(newEmployee);
 
   initialMonthlySalary (userSalary);
-
+  clearInputFields();
 
 
 }
@@ -80,6 +80,14 @@ function finalMonthlyCost( monthlySalary ){
   }
 }
 
+function clearInputFields(){
+  return $('#firstNameInput').val(''),
+         $('#lastNameInput').val(''),
+         $('#idNumInput').val(''),
+         $('#idNumInput').val(''),
+         $('#titleInput').val(''),
+         $('#salaryInput').val('');
+}
 // function calculatingMonthlyCost(){
 //
 //   $('#monthlyCost').append('Total Monthly: ' + inputMonthlyCost);

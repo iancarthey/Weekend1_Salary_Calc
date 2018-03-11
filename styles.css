@@ -8,6 +8,10 @@ th {
   border: 2px solid Black;
 }
 
+h1{
+  background-color: lightCoral;
+  color: white;
+}
 
 .addedTableInputs {
   font-size: 16px;
@@ -51,7 +55,18 @@ td {
   border: 2px outset grey;
 }
 
-#monthlyCost {
+#monthlyFace{
   text-align: right;
-  
+  background-color: lightCoral;
+  color: white;
+}
+
+.headerEmployee{
+  background-color: lightCoral;
+  color: white;
+}
+
+.tableLable{
+  background-color: lightCoral;
+  color: white;
 }
